@@ -1,0 +1,53 @@
+. authorize(email, password)
+. register(email, password, first_name, last_name, telephone, image)
+. getPublications(token, idUser)  # include get my publication
+. getPublicationInfo(token, idUser, idPublication)
+. deletePublication(token, idPublication)
+. editPublication(token, idPublication, microCategory, name, image, address, description, price)
+. createPublication(token, idUser, microCategory, name, image, address, description, price)  # -> inform user
+. getUserInfo(token, idUser)  # include get my profile
+. editUserInfo(token, idUser, email, password, telephone, first_name, last_name, image)
+. deleteUser(token, idUser)
+. getFavourites(token, idUser)
+. addToFavourites(token, idUser, idPublication)
+. deleteFromFavourites(token, idUser, idPublication)
+. searchPublications(token, name, microCategory, sortBy, page)
+. showChatInfo(token, idUser, idSeller, idChat)
+. sendMessage(token, idUser, idSeller, text)
+. showUserChats(token, idUser)
+
+def authorize(request):
+    request.POST.get('login')
+
+url = 'localhost:8000/authorize/'
+response = requset.get(url, context={
+    'email': email,
+    'password': password
+})
+
+def authorize(request):
+    email = request.POST.get('email')
+    password = request.POST.get('password')
+    context = {}
+    if is_valid(email, password):
+        context{
+            'ok': {
+                'token': hash(id_user)
+            }
+        }
+    else:
+        pass
+
+Chat
+    - chatId
+    - minUserId
+    - maxUserId
+
+[1, 2, 3]
+
+def foo():
+    response = request.(url)
+    if response['ok']:
+        pass
+    else:
+        pass
